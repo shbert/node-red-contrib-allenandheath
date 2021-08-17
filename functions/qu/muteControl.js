@@ -38,7 +38,11 @@ module.exports = {
                         if(msg.payload.channel === undefined){return "channel is not specified";}
 
                         //Find the channel id
-                        channelId = object.parameters.channelTypes[msg.payload.channelType][msg.payload.channel];
+                        if (msg.payload.channelType == "Mix" || msg.payload.channelType == "FXSend") {
+                            channelId = object.parameters.channelTypes[msg.payload.channelType][msg.payload.channel][0];    
+                        } else {
+                            channelId = object.parameters.channelTypes[msg.payload.channelType][msg.payload.channel];
+                        }
                         if(channelId === undefined){return "channel id was not found";}
 
                     }
