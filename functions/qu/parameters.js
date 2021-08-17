@@ -51,12 +51,14 @@ module.exports = {
                 "4": 0x0B
             },
             "FXSend": {
+                // RH: array required for?
                 "1": [0x00, 0x10],
                 "2": [0x01, 0x11],
                 "3": [0x02, 0x12],
                 "4": [0x03, 0x13]
             },
             "Mix": {
+                // RH: array required for?
                 "1": [0x60, 0x00],
                 "2": [0x61, 0x01],
                 "3": [0x62, 0x02],
