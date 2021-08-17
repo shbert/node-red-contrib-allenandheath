@@ -26,6 +26,10 @@
         <label for="node-config-input-midiChannel"><i class="icon-bookmark"></i> Midi Channel</label>
         <input type="text" id="node-config-input-midiChannel">
     </div>
+    <div class="form-row">
+        <label for="node-config-input-enabled"><i class="icon-bookmark"></i> Enabled</label>
+        <input type="checkbox" id="node-config-input-enabled">
+    </div>
 </script>
 
 <!-- Register -->
@@ -37,7 +41,8 @@
             ipAddress: {value: "0.0.0.0", required: true},
             port: {value: 51325, required: true, validate: RED.validators.number()},
             console: {value: "", required: true},
-            midiChannel: {value: "", required: true}
+            midiChannel: {value: "", required: true},
+            enabled: {value: true, required: true}
         },
         label: function() {
             return this.name||"Allen & Heath Network";

@@ -1,10 +1,12 @@
 const net = require('net');
+const { send } = require('process');
 module.exports = function(RED) {
     function AHNetwork(config) {
         RED.nodes.createNode(this, config);
         this.midiChannel = (config.midiChannel - 1).toString(16);
         this.ipAddress = config.ipAddress;
         this.port = config.port;
+        this.enabled = config.enabled;
         this.errorCallbacks = [];
         this.successCallbacks = [];
         this.messageCallbacks = [];
@@ -28,6 +30,11 @@ module.exports = function(RED) {
 
         //Attempt connection
         this.connect = function() {
+            if (config.enabled == false) {
+                this.log("Connection for this Allen & Heath network disabled: "+ config.console + " @ IP: " + config.ipAddress + ":" + config.port);
+                this.sendError("any", "Disconnected!");
+                return;
+            }
             this.log("Attempting connection to Allen & Heath Console: " + config.console + " @ IP: " + config.ipAddress + ":" + config.port);
             this.sendSuccess("any", "Connecting");
 
