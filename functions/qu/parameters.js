@@ -91,7 +91,8 @@ module.exports = {
             channelName: require("./channelName.js").object(),
             muteControl: require("./muteControl.js").object(),
             faderLevel: require("./faderLevel.js").object(),
-            sceneRecall: require("./sceneRecall.js").object()
+            sceneRecall: require("./sceneRecall.js").object(),
+            remoteShutdown: require("./remoteShutdown.js").object()
         },
 
         //Reset this object
