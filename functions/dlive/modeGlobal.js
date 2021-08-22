@@ -80,7 +80,7 @@ module.exports = {
 
     //Returns the midi channel and channel as a buffer
     setChannelSelection: function(channelSelection, midiChannel, channel) {
-        var sendOut = new Buffer(2);
+        var sendOut = new Buffer.alloc(2);
         switch(channelSelection){
             case "inputs": {
                 sendOut.writeUInt8((parseInt(midiChannel, 16)), 0);

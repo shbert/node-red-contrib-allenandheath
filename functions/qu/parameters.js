@@ -5,7 +5,7 @@ module.exports = {
             currentHeader: undefined
         },
         syncActive: true,
-        recieveBuffer: new Buffer(0),
+        recieveBuffer: new Buffer.alloc(0),
         channelTypes: {
             "inputChannel": {
                 "1": 0x20,
@@ -151,7 +151,7 @@ module.exports = {
                         return [msgs];
                     }
                     //Clear the buffer
-                    object.recieveBuffer = new Buffer(0);
+                    object.recieveBuffer = new Buffer.alloc(0);
                 }
             
             }

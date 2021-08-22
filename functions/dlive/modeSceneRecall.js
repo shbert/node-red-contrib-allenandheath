@@ -41,7 +41,7 @@ module.exports = {
             }
 
             //Send out request
-            var buffer = new Buffer(5);
+            var buffer = new Buffer.alloc(5);
             buffer.writeUInt8((0xB0 + parseInt(midiChannel, 16)), 0);
             buffer.writeUInt8(0x00, 1);
             buffer.writeUInt8(bank, 2);
