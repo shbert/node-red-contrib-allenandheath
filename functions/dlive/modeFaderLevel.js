@@ -46,7 +46,7 @@ module.exports = {
 
 
             //Send out request
-            var buffer = new Buffer(7);
+            var buffer = new Buffer.alloc(7);
             var channelSelection = global.setChannelSelection(msg.payload.channelSelection, midiChannel, msg.payload.channel)
             if(channelSelection == "ERROR") {return "Invalid Channel Selection";} 
 

@@ -23,7 +23,7 @@ module.exports = {
 
 
             //Send out request
-            var buffer = new Buffer(7);
+            var buffer = new Buffer.alloc(7);
             buffer.writeUInt8((0xB0 + parseInt(midiChannel, 16)), 0);
             buffer.writeUInt8(0x63, 1);
             buffer.writeUInt8(msg.payload.channel, 2);

@@ -15,7 +15,7 @@ module.exports = {
         var success = false;
     
         //Get a channel colour, just to get a reply
-        var buffer = new Buffer(12);
+        var buffer = new Buffer.alloc(12);
         buffer.writeUInt8(0xF0, 0);
         buffer.writeUInt8(0x00, 1);
         buffer.writeUInt8(0x00, 2);
