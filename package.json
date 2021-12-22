@@ -3,6 +3,7 @@
   "version": "1.4.2",
   "description": "Allen and Heath Control For Node Red",
   "main": "./AHNetwork/AHNetwork.js",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:haydendonald/node-red-contrib-allenandheath.git"
