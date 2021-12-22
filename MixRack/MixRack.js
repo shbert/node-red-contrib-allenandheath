@@ -7,6 +7,12 @@ module.exports = function(RED)
         var network = RED.nodes.getNode(config.network);
         var node = this;
         node.status({fill:"gray",shape:"dot",text:"Waiting"});
+        
+        if (network == null) {
+            node.status({fill:"red",shape:"dot",text:"Config missing"});
+            node.log("AHNetwork config error / null")
+            return
+        }
 
         //On error
         network.addErrorCallback(function(sender, message) {
