@@ -1,6 +1,6 @@
 const net = require('net');
 const { send } = require('process');
-module.exports = function(RED) {
+module.exports = function(RED) {    
     function AHNetwork(config) {
         RED.nodes.createNode(this, config);
         this.midiChannel = (config.midiChannel - 1).toString(16);
@@ -17,6 +17,7 @@ module.exports = function(RED) {
         this.pingInterval = undefined;
         this.consoles = require("../functions/consoles.js").object();
         var object = this;
+
 
         this.addErrorCallback = function(fn) {
             this.errorCallbacks.push(fn);
@@ -190,7 +191,7 @@ module.exports = function(RED) {
         });
 
         //Attempt connection
-        //this.connect();
+        this.connect();
     }
 
     RED.nodes.registerType("allenandheath-AHNetwork", AHNetwork);

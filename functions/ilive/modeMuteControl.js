@@ -33,13 +33,8 @@ module.exports = {
 
             //Send out request
             var state;
-<<<<<<< HEAD
             if(msg.payload.state == true) {state = 0x7F;}else{state = 0x3F;}
             var buffer = new Buffer.alloc(5);
-=======
-            if (msg.payload.state == true) { state = 0x7F; } else { state = 0x3F; }
-            var buffer = new Buffer(5);
->>>>>>> 5c6627fe3be7d24abc4682ee1d7854c5f330d57b
             buffer.writeUInt8((0x90 + parseInt(midiChannel, 16)), 0);
             buffer.writeUInt8(msg.payload.channel, 1);
             buffer.writeUInt8(state, 2);
