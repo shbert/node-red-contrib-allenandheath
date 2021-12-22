@@ -34,13 +34,8 @@ module.exports = {
             //Send out request
             var offset = 0x00;
             var sceneNumber = msg.payload.sceneNumber;
-<<<<<<< HEAD
             if(msg.payload.sceneNumber > 128){offset = 0x01; sceneNumber - 127;}
             var buffer = new Buffer.alloc(5);
-=======
-            if (msg.payload.sceneNumber > 128) { offset = 0x01; sceneNumber - 127; }
-            var buffer = new Buffer(5);
->>>>>>> 5c6627fe3be7d24abc4682ee1d7854c5f330d57b
             buffer.writeUInt8((0xB0 + parseInt(midiChannel, 16)), 0);
             buffer.writeUInt8(0x00, 1);
             buffer.writeUInt8(offset, 2);
