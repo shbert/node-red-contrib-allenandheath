@@ -190,7 +190,7 @@ module.exports = function(RED) {
         });
 
         //Attempt connection
-        this.connect();
+        //this.connect();
     }
 
     RED.nodes.registerType("allenandheath-AHNetwork", AHNetwork);
